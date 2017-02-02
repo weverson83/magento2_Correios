@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <correios>
+                <model>Weverson83\Correios\Model\Carrier\Correios</model>
+                <username backend_model="Magento\Config\Model\Config\Backend\Encrypted"/>
+                <password backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
+                <active>1</active>
+                <title>Correios</title>
+                <sallowspecific>0</sallowspecific>
+                <free_method />
+                <allowed_methods />
+                <declared_value>0</declared_value>
+                <notify_delivery>N</notify_delivery>
+                <package_type>1</package_type>
+                <gateway_url>http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx</gateway_url>
+                <is_online>1</is_online>
+                <showmethod>0</showmethod>
+                <debug>1</debug>
+                <add_days_to_estimate>0</add_days_to_estimate>
+                <show_estimate>0</show_estimate>
+                <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
+            </correios>
+        </carriers>
+    </default>
+</config>

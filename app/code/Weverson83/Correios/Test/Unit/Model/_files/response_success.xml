@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cResultado xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://tempuri.org/">
+    <Servicos>
+        <cServico>
+            <Codigo>10065</Codigo>
+            <Valor>0,00</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>0,00</ValorAvisoRecebimento>
+            <ValorValorDeclarado>0,00</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>2</Erro>
+            <MsgErro>País nao aceita o Serviço</MsgErro>
+            <ValorSemAdicionais>0,00</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>10138</Codigo>
+            <Valor>0,00</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>0,00</ValorAvisoRecebimento>
+            <ValorValorDeclarado>0,00</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>2</Erro>
+            <MsgErro>País nao aceita o Serviço</MsgErro>
+            <ValorSemAdicionais>0,00</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>40010</Codigo>
+            <Valor>118,95</Valor>
+            <PrazoEntrega>3</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>4,30</ValorAvisoRecebimento>
+            <ValorValorDeclarado>2,85</ValorValorDeclarado>
+            <EntregaDomiciliar>S</EntregaDomiciliar>
+            <EntregaSabado>N</EntregaSabado>
+            <Erro>0</Erro>
+            <MsgErro />
+            <ValorSemAdicionais>111,80</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>40045</Codigo>
+            <Valor>118,50</Valor>
+            <PrazoEntrega>3</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>4,30</ValorAvisoRecebimento>
+            <ValorValorDeclarado>2,40</ValorValorDeclarado>
+            <EntregaDomiciliar>S</EntregaDomiciliar>
+            <EntregaSabado>N</EntregaSabado>
+            <Erro>0</Erro>
+            <MsgErro />
+            <ValorSemAdicionais>111,80</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>40096</Codigo>
+            <Valor>0,00</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>0,00</ValorAvisoRecebimento>
+            <ValorValorDeclarado>0,00</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>-34</Erro>
+            <MsgErro>Codigo Administrativo ou Senha invalidos.</MsgErro>
+            <ValorSemAdicionais>0,00</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>40215</Codigo>
+            <Valor>0</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>4,30</ValorAvisoRecebimento>
+            <ValorValorDeclarado>2,48</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>008</Erro>
+            <MsgErro>Serviço indisponível para o trecho informado.</MsgErro>
+            <ValorSemAdicionais>0</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>40290</Codigo>
+            <Valor>0,00</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>0,00</ValorAvisoRecebimento>
+            <ValorValorDeclarado>0,00</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>16</Erro>
+            <MsgErro>Tarifa não cadastrada para região de tarifação ou cep informados</MsgErro>
+            <ValorSemAdicionais>0,00</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>40436</Codigo>
+            <Valor>0,00</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>0,00</ValorAvisoRecebimento>
+            <ValorValorDeclarado>0,00</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>-34</Erro>
+            <MsgErro>Codigo Administrativo ou Senha invalidos.</MsgErro>
+            <ValorSemAdicionais>0,00</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>41068</Codigo>
+            <Valor>0,00</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>0,00</ValorAvisoRecebimento>
+            <ValorValorDeclarado>0,00</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>-34</Erro>
+            <MsgErro>Codigo Administrativo ou Senha invalidos.</MsgErro>
+            <ValorSemAdicionais>0,00</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>41106</Codigo>
+            <Valor>50,35</Valor>
+            <PrazoEntrega>8</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>4,30</ValorAvisoRecebimento>
+            <ValorValorDeclarado>2,85</ValorValorDeclarado>
+            <EntregaDomiciliar>S</EntregaDomiciliar>
+            <EntregaSabado>N</EntregaSabado>
+            <Erro>0</Erro>
+            <MsgErro />
+            <ValorSemAdicionais>43,20</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>41300</Codigo>
+            <Valor>0,00</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>0,00</ValorAvisoRecebimento>
+            <ValorValorDeclarado>0,00</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>-34</Erro>
+            <MsgErro>Codigo Administrativo ou Senha invalidos.</MsgErro>
+            <ValorSemAdicionais>0,00</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+        <cServico>
+            <Codigo>81019</Codigo>
+            <Valor>0,00</Valor>
+            <PrazoEntrega>0</PrazoEntrega>
+            <ValorMaoPropria>0,00</ValorMaoPropria>
+            <ValorAvisoRecebimento>0,00</ValorAvisoRecebimento>
+            <ValorValorDeclarado>0,00</ValorValorDeclarado>
+            <EntregaDomiciliar />
+            <EntregaSabado />
+            <Erro>-34</Erro>
+            <MsgErro>Codigo Administrativo ou Senha invalidos.</MsgErro>
+            <ValorSemAdicionais>0,00</ValorSemAdicionais>
+            <obsFim />
+        </cServico>
+    </Servicos>
+</cResultado>
