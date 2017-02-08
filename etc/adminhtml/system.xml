@@ -43,6 +43,9 @@
                 <field id="package_width" translate="label" type="text" sortOrder="33" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Package Width</label>
                     <validate>validate-number validate-zero-or-greater</validate>
+                    <depends>
+                        <field id="package_type">1</field>
+                    </depends>
                 </field>
                 <field id="package_height" translate="label" type="text" sortOrder="34" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Package High</label>

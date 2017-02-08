@@ -1,0 +1,17 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="methods" type="methodsType"/>
+    <xs:complexType name="serviceType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute type="xs:int" name="value" use="optional"/>
+                <xs:attribute type="xs:string" name="label" use="optional"/>
+                <xs:attribute type="xs:byte" name="maxWeight" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="methodsType">
+        <xs:sequence>
+            <xs:element type="serviceType" name="service" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

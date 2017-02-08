@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dimension_limits xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="package_dimension_limits.xsd">
+    <box>
+        <lenght min="16" max="105" />
+        <width min="11" max="105" />
+        <height min="2" max="30" />
+    </box>
+    <envelope>
+        <lenght min="16" max="60" />
+        <width min="11" max="60" />
+    </envelope>
+    <roll>
+        <lenght min="18" max="105" />
+        <diameter min="5" max="91" />
+    </roll>
+</dimension_limits>

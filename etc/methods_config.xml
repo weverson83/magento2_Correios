@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<methods xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="methods_config.xsd">
+    <service value="10065" label="Carta Comercial" maxWeight="1" />
+    <service value="10138" label="Carta Comercial Registrada" maxWeight="1" />
+    <service value="40010" label="Sedex Sem Contrato" maxWeight="30" />
+    <service value="40045" label="Sedex a Cobrar" maxWeight="30" />
+    <service value="40096" label="Sedex Com Contrato" maxWeight="30" />
+    <service value="40215" label="Sedex 10" maxWeight="10" />
+    <service value="40290" label="Sedex HOJE" maxWeight="10" />
+    <service value="40436" label="Sedex Com Contrato" maxWeight="30" />
+    <service value="41068" label="PAC Com Contrato" maxWeight="50" />
+    <service value="41106" label="PAC Sem Contrato" maxWeight="50" />
+    <service value="41300" label="PAC GF" maxWeight="50" />
+    <service value="81019" label="E-Sedex Com Contrato" maxWeight="15" />
+</methods>
