@@ -8,7 +8,10 @@ use Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory;
 use Magento\Quote\Model\Quote\Address\RateResult\MethodFactory;
 use Magento\Shipping\Model\Rate\ResultFactory;
 use Magento\Shipping\Model\Simplexml\ElementFactory;
+use Weverson83\Correios\Model\Api\PriceEstimateDate;
+use Weverson83\Correios\Model\Api\PriceEstimateDateFactory;
 use Weverson83\Correios\Model\Carrier\Correios;
+use Weverson83\Correios\Model\Source\MethodList;
 use Weverson83\Correios\Test\Helper\CarrierDependencyMocker;
 
 /**
@@ -51,6 +54,21 @@ class CorreiosTest extends \PHPUnit_Framework_TestCase
         $this->errorFactory = $this->getErrorFactoryMock();
         $this->rateMethodFactory = $this->getRateMethodFactoryMock();
 
+        $rateRequestMock = $this->getMockBuilder(RateRequest::class)
+            ->disableOriginalConstructor()
+            ->setMethods(['getAllItems'])
+            ->getMock();
+        $rateRequestMock->method('getAllItems')->will($this->returnValue([]));
+
+        $priceEstimateDate = $this->getObjectManager()
+            ->getObject(
+                PriceEstimateDate::class,
+                [
+                    'rateRequest' => $rateRequestMock,
+                    'scopeConfig' => $this->scopeConfig,
+                ]
+            );
+
         /** @var Correios $carrier */
         $this->carrier = $this->getObjectManager()->getObject(
             Correios::class,
@@ -62,6 +80,8 @@ class CorreiosTest extends \PHPUnit_Framework_TestCase
                 'rateFactory' => $this->rateFactory,
                 'rateErrorFactory' => $this->errorFactory,
                 'rateMethodFactory' => $this->rateMethodFactory,
+                'priceEstimateDate' => $priceEstimateDate,
+                'methodList' => $this->getObjectManager()->getObject(MethodList::class),
             ]
         );
     }

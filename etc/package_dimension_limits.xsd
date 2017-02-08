@@ -3,16 +3,16 @@
     <xs:complexType name="lenghtType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute type="xs:byte" name="min" use="optional"/>
-                <xs:attribute type="xs:byte" name="max" use="optional"/>
+                <xs:attribute type="xs:float" name="min" use="required"/>
+                <xs:attribute type="xs:float" name="max" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
     <xs:complexType name="widthType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute type="xs:byte" name="min" use="optional"/>
-                <xs:attribute type="xs:byte" name="max" use="optional"/>
+                <xs:attribute type="xs:float" name="min" use="required"/>
+                <xs:attribute type="xs:float" name="max" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -26,36 +26,36 @@
     </xs:complexType>
     <xs:complexType name="boxType">
         <xs:sequence>
-            <xs:element type="lenghtType" name="lenght"/>
-            <xs:element type="widthType" name="width"/>
-            <xs:element type="heightType" name="height"/>
+            <xs:element type="lenghtType" name="lenght" minOccurs="1"/>
+            <xs:element type="widthType" name="width" minOccurs="1"/>
+            <xs:element type="heightType" name="height" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="envelopeType">
         <xs:sequence>
-            <xs:element type="lenghtType" name="lenght"/>
-            <xs:element type="widthType" name="width"/>
+            <xs:element type="lenghtType" name="lenght" minOccurs="1"/>
+            <xs:element type="widthType" name="width" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="diameterType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute type="xs:byte" name="min"/>
-                <xs:attribute type="xs:byte" name="max"/>
+                <xs:attribute type="xs:float" name="min" use="required"/>
+                <xs:attribute type="xs:float" name="max" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
     <xs:complexType name="rollType">
         <xs:sequence>
-            <xs:element type="lenghtType" name="lenght"/>
-            <xs:element type="diameterType" name="diameter"/>
+            <xs:element type="lenghtType" name="lenght" minOccurs="1"/>
+            <xs:element type="diameterType" name="diameter" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="dimension_limitsType">
         <xs:sequence>
-            <xs:element type="boxType" name="box"/>
-            <xs:element type="envelopeType" name="envelope"/>
-            <xs:element type="rollType" name="roll"/>
+            <xs:element type="boxType" name="box" minOccurs="1"/>
+            <xs:element type="envelopeType" name="envelope" minOccurs="1"/>
+            <xs:element type="rollType" name="roll" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>

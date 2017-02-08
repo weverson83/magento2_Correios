@@ -8,7 +8,7 @@ use Magento\Shipping\Model\Carrier\CarrierInterface;
 use Magento\Shipping\Model\Rate\Result;
 use Magento\Shipping\Model\Tracking\Result\Error;
 use Weverson83\Correios\Model\Api\PriceEstimateDate;
-use Weverson83\Correios\Model\Config\MethodList;
+use Weverson83\Correios\Model\Source\MethodList;
 
 /**
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
@@ -29,6 +29,14 @@ class Correios extends AbstractCarrierOnline  implements CarrierInterface
     protected $_result;
 
     private $_errors = [];
+    /**
+     * @var PriceEstimateDate
+     */
+    private $priceEstimateDate;
+    /**
+     * @var MethodList
+     */
+    private $methodList;
 
     public function __construct(
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
@@ -47,6 +55,8 @@ class Correios extends AbstractCarrierOnline  implements CarrierInterface
         \Magento\Directory\Helper\Data $directoryData,
         \Magento\CatalogInventory\Api\StockRegistryInterface $stockRegistry,
         \Magento\Framework\HTTP\ZendClientFactory $httpClientFactory,
+        PriceEstimateDate $priceEstimateDate,
+        MethodList $methodList,
         array $data = []
     )
     {
@@ -69,6 +79,8 @@ class Correios extends AbstractCarrierOnline  implements CarrierInterface
             $data);
 
         $this->httpClientFactory = $httpClientFactory;
+        $this->priceEstimateDate = $priceEstimateDate;
+        $this->methodList = $methodList;
     }
 
     /**
@@ -187,9 +199,7 @@ class Correios extends AbstractCarrierOnline  implements CarrierInterface
      */
     protected function getServiceTitleByCode($code)
     {
-        $methodList = new MethodList();
-
-        return array_reduce($methodList->toOptionArray(), function ($result, $option) use ($code) {
+        return array_reduce($this->methodList->toOptionArray(), function ($result, $option) use ($code) {
             if ($option['value'] == $code) {
                 $result = $option['label'];
             }
@@ -216,14 +226,12 @@ class Correios extends AbstractCarrierOnline  implements CarrierInterface
      */
     protected function _doShipmentRequest(\Magento\Framework\DataObject $request)
     {
-        /** @var PriceEstimateDate $service */
-        $service = new PriceEstimateDate($request, $this->_scopeConfig);
         $client = $this->httpClientFactory->create();
 
-        $uri =$service->getMethodUri();
+        $uri = $this->priceEstimateDate->getMethodUri();
         $client->setUri($uri);
         $client->setConfig(['maxredirects' => 0, 'timeout' => 30]);
-        $client->setParameterGet($service->getParams());
+        $client->setParameterGet($this->priceEstimateDate->getParams());
 
         return $client->request(\Zend_Http_Client::GET)->getBody();
     }

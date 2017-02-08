@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Weverson83\Correios\Model\Config\MethodList" type="Magento\Framework\Config\Data">
+        <arguments>
+            <argument name="cacheId" xsi:type="string">weverson83_correios_method_list</argument>
+            <argument name="reader" xsi:type="object">Weverson83\Correios\Model\Config\MethodList\Reader</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Weverson83\Correios\Model\Config\MethodList\Reader" type="Magento\Framework\Config\Reader\Filesystem">
+        <arguments>
+            <argument name="fileName" xsi:type="string">methods_config.xml</argument>
+            <argument name="schemaLocator" xsi:type="object">Weverson83\Correios\Model\Config\MethodList\SchemaLocator</argument>
+            <argument name="converter" xsi:type="object">Weverson83\Correios\Model\Config\MethodConfigConverter</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Weverson83\Correios\Model\Config\MethodList\SchemaLocator" type="Magento\Framework\Config\GenericSchemaLocator">
+        <arguments>
+            <argument name="moduleName" xsi:type="string">Weverson83_Correios</argument>
+            <argument name="schema" xsi:type="string">methods_config.xsd</argument>
+        </arguments>
+    </virtualType>
+</config>

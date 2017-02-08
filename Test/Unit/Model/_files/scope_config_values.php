@@ -13,4 +13,5 @@ return [
     'carriers/correios/package_height' => '11',
     'carriers/correios/package_diameter' => '11',
     'carriers/correios/showmethod' => '1',
+    'shipping/origin/postcode' => '82810160',
 ];

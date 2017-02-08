@@ -1,5 +1,5 @@
 <?php
-namespace Weverson83\Correios\Model\Config;
+namespace Weverson83\Correios\Model\Source;
 use Magento\Framework\Option\ArrayInterface;
 
 /**

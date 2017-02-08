@@ -3,15 +3,15 @@
     <xs:complexType name="serviceType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute type="xs:int" name="value" use="optional"/>
-                <xs:attribute type="xs:string" name="label" use="optional"/>
-                <xs:attribute type="xs:byte" name="maxWeight" use="optional"/>
+                <xs:attribute type="xs:int" name="value" use="required"/>
+                <xs:attribute type="xs:string" name="label" use="required"/>
+                <xs:attribute type="xs:byte" name="maxWeight" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
     <xs:complexType name="methodsType">
         <xs:sequence>
-            <xs:element type="serviceType" name="service" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element type="serviceType" name="service" maxOccurs="unbounded" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
 </xs:schema>
