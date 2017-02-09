@@ -50,11 +50,11 @@ class PriceEstimateDate
             'sCepOrigem' => $this->getOriginPostcode(),
             'sCepDestino' => $this->cleanPostcode($this->rateRequest->getDestPostcode()),
             'nVlPeso' => $this->rateRequest->getPackageWeight(),
-            'nVlLargura' => self::DEFAULT_WIDTH,
+            'nVlLargura' => $this->getConfigValue(self::DEFAULT_WIDTH, ConfigPath::PACKAGE_WIDTH),
             'nCdFormato' => $this->getConfigValue(self::DEFAULT_PACKAGE_TYPE, ConfigPath::PACKAGE_TYPE),
-            'nVlComprimento' => self::DEFAULT_DEPTH,
-            'nVlAltura' =>  self::DEFAULT_HEIGHT,
-            'nVlDiametro' => self::DEFAULT_DIAMETER,
+            'nVlComprimento' => $this->getConfigValue(self::DEFAULT_DEPTH, ConfigPath::PACKAGE_LENGTH),
+            'nVlAltura' =>  $this->getConfigValue(self::DEFAULT_HEIGHT, ConfigPath::PACKAGE_HEIGHT),
+            'nVlDiametro' => $this->getConfigValue(self::DEFAULT_DIAMETER, ConfigPath::PACKAGE_DIAMETER),
             'sCdMaoPropria' => 'N',
             'nVlValorDeclarado' => $this->getDeclaredValue(),
             'sCdAvisoRecebimento' => $this->getNotifyDeliveryFlag(),
@@ -77,12 +77,14 @@ class PriceEstimateDate
 
     protected function getConfigValue($defaultValue, $configPath)
     {
-        if (!strlen($defaultValue)) {
-            $defaultValue = $this->scopeConfig->getValue(
-                $configPath,
-                \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
-                $this->rateRequest->getStoreId()
-            );
+        $configValue = $this->scopeConfig->getValue(
+            $configPath,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $this->rateRequest->getStoreId()
+        );
+
+        if (strlen($configValue)) {
+            return $configValue;
         }
 
         if (!strlen($defaultValue)) {

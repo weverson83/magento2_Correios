@@ -46,7 +46,7 @@ class PriceEstimateDateTest extends \PHPUnit_Framework_TestCase
         $method = $this->getReflectionMethod('getConfigValue');
 
         $this->assertNotEmpty($method->invoke($this->model, '', ConfigPath::ALLOWED_METHODS));
-        $this->assertEquals('123', $method->invoke($this->model, '123', ConfigPath::ALLOWED_METHODS));
+        $this->assertNotEquals('123', $method->invoke($this->model, '123', ConfigPath::ALLOWED_METHODS));
         $this->assertEquals('123', $method->invoke($this->model, '123', 'invalid_path'));
     }
 

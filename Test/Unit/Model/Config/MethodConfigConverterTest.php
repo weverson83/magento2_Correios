@@ -2,6 +2,7 @@
 namespace Weverson83\Correios\Model\Config;
 
 use Magento\Framework\Config\ConverterInterface;
+use Weverson83\Correios\Model\Method\Method;
 
 class MethodConfigConverterTest extends \PHPUnit_Framework_TestCase
 {
@@ -25,6 +26,22 @@ class MethodConfigConverterTest extends \PHPUnit_Framework_TestCase
         return $source;
     }
 
+    /**
+     * @param string $code
+     * @param string $label
+     * @param float $weight
+     * @return Method
+     */
+    private function createMethod($code, $label, $weight)
+    {
+        $method = new Method();
+        $method->setCode($code)
+            ->setLabel($label)
+            ->setMaxWeight($weight);
+
+        return $method;
+    }
+
     public function testImplementsTheConfigConverterInterface()
     {
         $this->assertInstanceOf(ConverterInterface::class, $this->converter);
@@ -34,18 +51,18 @@ class MethodConfigConverterTest extends \PHPUnit_Framework_TestCase
     {
         $expectedArray = [
             'methods' => [
-                '88' => 'Test 1',
-                '99' => 'Test 2',
+                $this->createMethod('88', 'Test 1', 10),
+                $this->createMethod('99', 'Test 2', 20),
             ]
         ];
         $xml = <<<XML
 <methods>
-    <service value="88" label="Test 1" />
-    <service value="99" label="Test 2" />
+    <service value="88" label="Test 1" maxWeight="10" />
+    <service value="99" label="Test 2" maxWeight="20" />
 </methods>
 XML;
 
-        $this->assertSame($expectedArray, $this->converter->convert($this->createDOMDocument($xml)));
+        $this->assertEquals($expectedArray, $this->converter->convert($this->createDOMDocument($xml)));
     }
 
     public function testReturnsTheRootNode()

@@ -17,4 +17,8 @@ class Path
     const PACKAGE_TYPE = 'carriers/correios/package_type';
     const SHOW_ESTIMATE = 'carriers/correios/show_estimate';
     const ADD_DAYS_TO_ESTIMATE = 'carriers/correios/add_days_to_estimate';
+    const PACKAGE_WIDTH = 'carriers/correios/package_width';
+    const PACKAGE_HEIGHT = 'carriers/correios/package_height';
+    const PACKAGE_DIAMETER = 'carriers/correios/package_diameter';
+    const PACKAGE_LENGTH = 'carriers/correios/package_length';
 }

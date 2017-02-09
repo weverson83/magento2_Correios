@@ -1,6 +1,7 @@
 <?php
 namespace Weverson83\Correios\Model\Source;
 use Magento\Framework\Option\ArrayInterface;
+use Weverson83\Correios\Model\Method\Method;
 
 /**
  *
@@ -15,7 +16,7 @@ class MethodList implements ArrayInterface
      */
     private $methodList;
 
-    public function __construct(\Weverson83\Correios\Model\Config\MethodList $methodList)
+    public function __construct(\Magento\Framework\Config\Data $methodList)
     {
         $this->methodList = $methodList;
     }
@@ -27,21 +28,18 @@ class MethodList implements ArrayInterface
      */
     public function toOptionArray()
     {
-        return $this->methodList->get('methods');
-//        return [
-//            ['value' => 10065, 'label' => __('Carta Comercial')],
-//            ['value' => 10138, 'label' => __('Carta Comercial Registrada')],
-//            ['value' => 40010, 'label' => __('Sedex Sem Contrato')],
-//            ['value' => 40045, 'label' => __('Sedex a Cobrar')],
-//            ['value' => 40096, 'label' => __('Sedex Com Contrato')],
-//            ['value' => 40215, 'label' => __('Sedex 10')],
-//            ['value' => 40290, 'label' => __('Sedex HOJE')],
-//            ['value' => 40436, 'label' => __('Sedex Com Contrato')],
-//            ['value' => 41068, 'label' => __('PAC Com Contrato')],
-//            ['value' => 41106, 'label' => __('PAC Sem Contrato')],
-//            ['value' => 41300, 'label' => __('PAC GF')],
-//            ['value' => 81019, 'label' => __('E-Sedex Com Contrato')],
-//        ];
+        /** @var Method[] $methods */
+        $methods = $this->methodList->get('methods');
+        $outputArray = [];
+
+        foreach ($methods as $method) {
+            $outputArray[] = [
+                'value' => $method->getCode(),
+                'label' => $method->getLabel(),
+            ];
+        }
+
+        return $outputArray;
     }
 
     public function toArray()

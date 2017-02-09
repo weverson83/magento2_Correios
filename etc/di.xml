@@ -20,4 +20,9 @@
             <argument name="schema" xsi:type="string">methods_config.xsd</argument>
         </arguments>
     </virtualType>
+    <type name="Weverson83\Correios\Model\Source\MethodList">
+        <arguments>
+            <argument name="methodList" xsi:type="object">Weverson83\Correios\Model\Config\MethodList</argument>
+        </arguments>
+    </type>
 </config>

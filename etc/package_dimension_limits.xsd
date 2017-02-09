@@ -1,6 +1,6 @@
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="dimension_limits" type="dimension_limitsType"/>
-    <xs:complexType name="lenghtType">
+    <xs:complexType name="lengthType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
                 <xs:attribute type="xs:float" name="min" use="required"/>
@@ -26,14 +26,14 @@
     </xs:complexType>
     <xs:complexType name="boxType">
         <xs:sequence>
-            <xs:element type="lenghtType" name="lenght" minOccurs="1"/>
+            <xs:element type="lengthType" name="length" minOccurs="1"/>
             <xs:element type="widthType" name="width" minOccurs="1"/>
             <xs:element type="heightType" name="height" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="envelopeType">
         <xs:sequence>
-            <xs:element type="lenghtType" name="lenght" minOccurs="1"/>
+            <xs:element type="lengthType" name="length" minOccurs="1"/>
             <xs:element type="widthType" name="width" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>
@@ -47,7 +47,7 @@
     </xs:complexType>
     <xs:complexType name="rollType">
         <xs:sequence>
-            <xs:element type="lenghtType" name="lenght" minOccurs="1"/>
+            <xs:element type="lengthType" name="length" minOccurs="1"/>
             <xs:element type="diameterType" name="diameter" minOccurs="1"/>
         </xs:sequence>
     </xs:complexType>

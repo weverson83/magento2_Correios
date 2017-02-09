@@ -2,6 +2,7 @@
 namespace Weverson83\Correios\Model\Config;
 
 use Magento\Framework\Config\ConverterInterface;
+use Weverson83\Correios\Model\Method\Method;
 
 class MethodConfigConverter implements ConverterInterface
 {
@@ -9,7 +10,7 @@ class MethodConfigConverter implements ConverterInterface
      * Convert config
      *
      * @param \DOMDocument $source
-     * @return array
+     * @return Method[]
      */
     public function convert($source)
     {
@@ -17,8 +18,12 @@ class MethodConfigConverter implements ConverterInterface
         $result = [];
         foreach ($this->getAllChildElements($rootNode) as $childNode) {
             if ($childNode->nodeName === 'service') {
-                $serviceCode = $childNode->attributes->getNamedItem('value')->nodeValue;
-                $result[$serviceCode] = $childNode->attributes->getNamedItem('label')->nodeValue;
+                $method = new Method();
+                $method->setCode($this->getNodeAttributeValue($childNode, 'value'))
+                    ->setLabel($this->getNodeAttributeValue($childNode, 'label'))
+                    ->setMaxWeight($this->getNodeAttributeValue($childNode, 'maxWeight'));
+
+                $result[] = $method;
             }
         }
         return [$rootNode->nodeName => $result];
@@ -39,5 +44,9 @@ class MethodConfigConverter implements ConverterInterface
             return $childNode->nodeType === \XML_ELEMENT_NODE;
         });
     }
+
+    private function getNodeAttributeValue($childNode, $attributeName)
+    {
+        return $childNode->attributes->getNamedItem($attributeName)->nodeValue;
+    }
 }
- 

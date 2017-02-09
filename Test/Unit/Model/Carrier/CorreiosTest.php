@@ -8,6 +8,7 @@ use Magento\Quote\Model\Quote\Address\RateResult\ErrorFactory;
 use Magento\Quote\Model\Quote\Address\RateResult\MethodFactory;
 use Magento\Shipping\Model\Rate\ResultFactory;
 use Magento\Shipping\Model\Simplexml\ElementFactory;
+use Magento\TestFramework\ObjectManager;
 use Weverson83\Correios\Model\Api\PriceEstimateDate;
 use Weverson83\Correios\Model\Api\PriceEstimateDateFactory;
 use Weverson83\Correios\Model\Carrier\Correios;
@@ -24,25 +25,25 @@ class CorreiosTest extends \PHPUnit_Framework_TestCase
 {
     use CarrierDependencyMocker;
 
-    /** @var  ScopeConfigInterface */
+    /** @var ScopeConfigInterface */
     private $scopeConfig;
 
-    /** @var  ZendClientFactory */
+    /** @var ZendClientFactory */
     private $httpClientFactory;
 
-    /** @var  ElementFactory */
+    /** @var ElementFactory */
     private $xmlElFactory;
 
-    /** @var  ResultFactory */
+    /** @var ResultFactory */
     private $rateFactory;
 
-    /** @var  ErrorFactory */
+    /** @var ErrorFactory */
     private $errorFactory;
 
-    /** @var  MethodFactory */
+    /** @var MethodFactory */
     private $rateMethodFactory;
 
-    /** @var  Correios */
+    /** @var Correios */
     private $carrier;
 
     public function setUp()
@@ -69,6 +70,16 @@ class CorreiosTest extends \PHPUnit_Framework_TestCase
                 ]
             );
 
+        $methodListMock = $this->getMockBuilder(MethodList::class)
+            ->disableOriginalConstructor()
+            ->setMethods(['toOptionArray'])
+            ->getMock();
+
+        $methodListMock->method('toOptionArray')->will($this->returnValue([
+            ['value' => '40010', 'label' => 'Test']
+        ]));
+
+
         /** @var Correios $carrier */
         $this->carrier = $this->getObjectManager()->getObject(
             Correios::class,
@@ -81,7 +92,7 @@ class CorreiosTest extends \PHPUnit_Framework_TestCase
                 'rateErrorFactory' => $this->errorFactory,
                 'rateMethodFactory' => $this->rateMethodFactory,
                 'priceEstimateDate' => $priceEstimateDate,
-                'methodList' => $this->getObjectManager()->getObject(MethodList::class),
+                'methodList' => $methodListMock,
             ]
         );
     }

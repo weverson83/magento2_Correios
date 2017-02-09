@@ -15,12 +15,17 @@
                 <declared_value>0</declared_value>
                 <notify_delivery>N</notify_delivery>
                 <package_type>1</package_type>
+                <package_width>11</package_width>
+                <package_height>2</package_height>
+                <package_length>16</package_length>
+                <package_diameter>20</package_diameter>
                 <gateway_url>http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx</gateway_url>
                 <is_online>1</is_online>
                 <showmethod>0</showmethod>
                 <debug>1</debug>
                 <add_days_to_estimate>0</add_days_to_estimate>
                 <show_estimate>0</show_estimate>
+                <max_package_weight>50</max_package_weight>
                 <specificerrmsg>This shipping method is currently unavailable. If you would like to ship using this shipping method, please contact us.</specificerrmsg>
             </correios>
         </carriers>
