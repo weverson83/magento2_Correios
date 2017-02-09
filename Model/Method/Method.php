@@ -4,7 +4,7 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Model\Method;
+namespace Weverson\Correios\Model\Method;
 
 class Method
 {

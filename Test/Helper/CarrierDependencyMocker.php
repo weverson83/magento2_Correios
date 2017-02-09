@@ -5,7 +5,7 @@
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
 
-namespace Weverson83\Correios\Test\Helper;
+namespace Weverson\Correios\Test\Helper;
 
 use Magento\Framework\App\Config\ScopeConfigInterface as ScopeConfigInterface;
 use Magento\Framework\HTTP\ZendClient;

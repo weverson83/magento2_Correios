@@ -20,11 +20,11 @@
                 </field>
                 <field id="allowed_methods" translate="label" type="multiselect" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Allowed Methods</label>
-                    <source_model>Weverson83\Correios\Model\Source\MethodList</source_model>
+                    <source_model>Weverson\Correios\Model\Source\MethodList</source_model>
                 </field>
                 <field id="free_method" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Free Method</label>
-                    <source_model>Weverson83\Correios\Model\Source\MethodList</source_model>
+                    <source_model>Weverson\Correios\Model\Source\MethodList</source_model>
                 </field>
                 <field id="show_estimate" translate="label" type="select" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Show Estimate</label>
@@ -38,7 +38,7 @@
                 </field>
                 <field id="package_type" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Package Type</label>
-                    <source_model>Weverson83\Correios\Model\Source\PackageTypeList</source_model>
+                    <source_model>Weverson\Correios\Model\Source\PackageTypeList</source_model>
                 </field>
                 <field id="package_width" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Package Width</label>

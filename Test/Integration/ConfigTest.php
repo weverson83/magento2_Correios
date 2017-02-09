@@ -4,7 +4,7 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Test\Integration;
+namespace Weverson\Correios\Test\Integration;
 
 use Magento\Framework\App\Config;
 use Magento\Framework\App\DeploymentConfig;
@@ -12,11 +12,11 @@ use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Module\ModuleList;
 use Magento\TestFramework\ObjectManager;
-use Weverson83\Correios\Model\Carrier\Correios;
+use Weverson\Correios\Model\Carrier\Correios;
 
 class ConfigTest extends \PHPUnit_Framework_TestCase
 {
-    private $moduleName = 'Weverson83_Correios';
+    private $moduleName = 'Weverson_Correios';
 
     /** @var ObjectManager $objectManager */
     private $objectManager;

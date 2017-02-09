@@ -4,7 +4,7 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Model\Carrier;
+namespace Weverson\Correios\Model\Carrier;
 
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Quote\Model\Quote\Address\RateRequest;
@@ -12,8 +12,8 @@ use Magento\Shipping\Model\Carrier\AbstractCarrierOnline;
 use Magento\Shipping\Model\Carrier\CarrierInterface;
 use Magento\Shipping\Model\Rate\Result;
 use Magento\Shipping\Model\Tracking\Result\Error;
-use Weverson83\Correios\Model\Api\PriceEstimateDate;
-use Weverson83\Correios\Model\Source\MethodList;
+use Weverson\Correios\Model\Api\PriceEstimateDate;
+use Weverson\Correios\Model\Source\MethodList;
 
 class Correios extends AbstractCarrierOnline implements CarrierInterface
 {

@@ -4,7 +4,7 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios;
+namespace Weverson\Correios;
 
 use Magento\Framework\ObjectManager\ConfigInterface as ObjectManagerConfig;
 use Magento\TestFramework\ObjectManager;
@@ -71,7 +71,7 @@ class MethodListTest extends \PHPUnit_Framework_TestCase
     public function testVirtualType()
     {
         $this->assertVirtualType(\Magento\Framework\Config\Data::class, $this->configType);
-        $this->assertDiArgumentSame('weverson83_correios_method_list', $this->configType, 'cacheId');
+        $this->assertDiArgumentSame('weverson_correios_method_list', $this->configType, 'cacheId');
         $this->assertDiArgumentInstance($this->readerType, $this->configType, 'reader');
     }
 
@@ -85,7 +85,7 @@ class MethodListTest extends \PHPUnit_Framework_TestCase
     public function testConfigSchemaLocatorDiConfig()
     {
         $this->assertVirtualType(\Magento\Framework\Config\GenericSchemaLocator::class, $this->schemaLocatorType);
-        $this->assertDiArgumentSame('Weverson83_Correios', $this->schemaLocatorType, 'moduleName');
+        $this->assertDiArgumentSame('Weverson_Correios', $this->schemaLocatorType, 'moduleName');
         $this->assertDiArgumentSame('methods_config.xsd', $this->schemaLocatorType, 'schema');
     }
 

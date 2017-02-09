@@ -4,11 +4,11 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Test\Unit\Model\Api;
+namespace Weverson\Correios\Test\Unit\Model\Api;
 
-use Weverson83\Correios\Model\Api\PriceEstimateDate;
-use Weverson83\Correios\Model\Source\Path as ConfigPath;
-use Weverson83\Correios\Test\Helper\CarrierDependencyMocker;
+use Weverson\Correios\Model\Api\PriceEstimateDate;
+use Weverson\Correios\Model\Source\Path as ConfigPath;
+use Weverson\Correios\Test\Helper\CarrierDependencyMocker;
 
 class PriceEstimateDateTest extends \PHPUnit_Framework_TestCase
 {

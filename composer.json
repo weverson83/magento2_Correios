@@ -1,5 +1,5 @@
 {
-  "name": "weverson83/correios",
+  "name": "weverson/correios",
   "description": "Integration with brazilian shipping carrier Correios",
   "type": "magento2-module",
   "version": "1.0.0",
@@ -20,7 +20,7 @@
   "autoload": {
     "files": [ "registration.php" ],
     "psr-4": {
-      "Weverson83\\Correios\\": ""
+      "Weverson\\Correios\\": ""
     }
   }
 }

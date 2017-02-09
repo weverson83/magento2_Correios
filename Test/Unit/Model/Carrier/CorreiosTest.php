@@ -4,7 +4,7 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Test\Unit\Model\Carrier;
+namespace Weverson\Correios\Test\Unit\Model\Carrier;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\HTTP\ZendClientFactory;
@@ -14,11 +14,11 @@ use Magento\Quote\Model\Quote\Address\RateResult\MethodFactory;
 use Magento\Shipping\Model\Rate\ResultFactory;
 use Magento\Shipping\Model\Simplexml\ElementFactory;
 use Magento\TestFramework\ObjectManager;
-use Weverson83\Correios\Model\Api\PriceEstimateDate;
-use Weverson83\Correios\Model\Api\PriceEstimateDateFactory;
-use Weverson83\Correios\Model\Carrier\Correios;
-use Weverson83\Correios\Model\Source\MethodList;
-use Weverson83\Correios\Test\Helper\CarrierDependencyMocker;
+use Weverson\Correios\Model\Api\PriceEstimateDate;
+use Weverson\Correios\Model\Api\PriceEstimateDateFactory;
+use Weverson\Correios\Model\Carrier\Correios;
+use Weverson\Correios\Model\Source\MethodList;
+use Weverson\Correios\Test\Helper\CarrierDependencyMocker;
 
 class CorreiosTest extends \PHPUnit_Framework_TestCase
 {

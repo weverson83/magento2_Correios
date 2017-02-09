@@ -4,7 +4,7 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Model\Source;
+namespace Weverson\Correios\Model\Source;
 
 use Magento\Framework\Option\ArrayInterface;
 

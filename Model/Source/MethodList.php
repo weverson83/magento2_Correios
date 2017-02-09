@@ -4,10 +4,10 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Model\Source;
+namespace Weverson\Correios\Model\Source;
 
 use Magento\Framework\Option\ArrayInterface;
-use Weverson83\Correios\Model\Method\Method;
+use Weverson\Correios\Model\Method\Method;
 
 class MethodList implements ArrayInterface
 {

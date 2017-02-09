@@ -4,12 +4,12 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Model\Api;
+namespace Weverson\Correios\Model\Api;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Quote\Model\Quote\Address\RateRequest;
 use Magento\Sales\Model\Order\Shipment;
-use Weverson83\Correios\Model\Source\Path as ConfigPath;
+use Weverson\Correios\Model\Source\Path as ConfigPath;
 
 class PriceEstimateDate
 {

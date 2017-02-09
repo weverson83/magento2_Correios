@@ -4,10 +4,10 @@
  *
  * @author    Weverson Cachinsky <weversoncachinsky@gmail.com>
  */
-namespace Weverson83\Correios\Model\Config;
+namespace Weverson\Correios\Model\Config;
 
 use Magento\Framework\Config\ConverterInterface;
-use Weverson83\Correios\Model\Method\Method;
+use Weverson\Correios\Model\Method\Method;
 
 class MethodConfigConverter implements ConverterInterface
 {
